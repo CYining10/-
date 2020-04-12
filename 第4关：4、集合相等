@@ -1,0 +1,50 @@
+#include<iostream>
+#include<set>
+using namespace std;
+void solve()
+{
+	int x;
+	string a, b;
+	cin >> x >> a >> x >> b;
+	set<char>s1, s2;
+	for (int i = 0; i < a.length(); i++)
+	{
+		s1.insert(a[i]);
+	}
+	for (int i = 0; i < b.length(); i++)
+	{
+		s2.insert(b[i]);
+	}
+	if (s1.size() != s2.size())
+	{
+		cout << "no" << endl;
+	}
+	else
+	{
+		bool ok = 1;
+		set<char>::iterator it1, it2;
+		for (it1 = s1.begin(), it2 = s2.begin(); it1 != s1.end() && it2 != s2.end(); it1++, it2++)
+		{
+			if (*it1 != *it2)
+			{
+				ok = 0;
+				break;
+			}
+		}
+		if (ok)
+		{
+			cout << "yes" << endl;
+		}
+		else
+		{
+			cout << "no" << endl;
+		}
+	}
+}
+int main()
+{
+	int T; cin >> T;
+	while (T--)
+		solve();
+	return 0;
+}
