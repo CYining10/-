@@ -43,7 +43,7 @@ int main()
         {
             for (i = 0; i < count; i++)
             {
-                if (count - i > 1)
+                if (count - i > 1)//第二个字符后无空格的方法（判断是否为最后一个数）
                     printf("%d ", b[i]);
                 else
                     printf("%d", b[i]);
